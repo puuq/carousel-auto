@@ -59,7 +59,10 @@ html {
 
 body {
   font-size: 1.6rem;
-  background: var(--bg);
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+      align-items: center;
 }
 
 .container {
@@ -239,3 +242,118 @@ body {
 .chatbot-icon ion-icon {
   font-size: 24px; /* Set your desired icon size */
 }
+
+.heading-1-content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  width: 100%;
+}
+
+.heading-1-content {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.heading-1-image-content img {
+  height: auto;
+  border-radius: 8px; /* Optional: add rounded corners to the image */
+  width: 50rem;
+  margin-left: 15rem;
+}
+
+.service-container {
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #eeeeee;
+  padding: 3rem;
+}
+
+.service-image-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 6rem;
+}
+
+.image-item {
+  text-align: center;
+}
+
+.circular-image {
+  width: 100px; /* Adjust the size as needed */
+  height: 100px; /* Adjust the size as needed */
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+/* Optional: Add some styling for the text */
+.image-item p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+/* testimonials styling start */
+.swiper-container-test {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.swiper-slide-test {
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.slide-content {
+  padding: 20px;
+  background: linear-gradient(to bottom, #3a3a3a, #282c34);
+}
+
+.user-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.user-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.user-rating {
+  font-size: 14px;
+  color: #61dafb;
+}
+
+.swiper-slide-test p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.swiper-pagination-bullet-test {
+  background: #61dafb;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active-test {
+  background: #61dafb;
+  opacity: 1;
+}
+
+.swiper-button-prev-test, .swiper-button-next-test {
+  color: #61dafb;
+  font-size: 18px;
+}
+
+.swiper-button-prev-test {
+  display: none; /* Initially hide the prev button */
+}
+
+/* testimonials styling end */
