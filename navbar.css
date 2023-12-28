@@ -24,12 +24,9 @@
     }
   }
   
-  html {
-    height: 100%;
-  }
   
   .topNav {
-    min-height: 100%;
+    max-height: 4rem;
     background: linear-gradient(315deg, rgba(255, 255, 255, 1) 0%, rgba(103, 81, 215, 1) 100%);
     background-repeat: no-repeat;
     font-family: 'Open Sans Bold', sans-serif;
@@ -86,7 +83,7 @@
   .navbar-list a {
     text-decoration: none;
     color: #6751d7;
-    font-size: 35px;
+    font-size: 10px;
     display: block;
     margin-bottom: 60px;
     transition: color 0.3s ease;
