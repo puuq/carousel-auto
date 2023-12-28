@@ -357,3 +357,12 @@ body {
 }
 
 /* testimonials styling end */
+
+/* footer styling */
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6rem;
+  width: 100%;
+}
