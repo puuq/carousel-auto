@@ -1,0 +1,416 @@
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  input {
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 5px 10px;
+  }
+  
+  @media (max-width: 768px) {
+    img {
+      display: none;
+    }
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  .topNav {
+    min-height: 100%;
+    background: linear-gradient(315deg, rgba(255, 255, 255, 1) 0%, rgba(103, 81, 215, 1) 100%);
+    background-repeat: no-repeat;
+    font-family: 'Open Sans Bold', sans-serif;
+  }
+  
+  /* responsive navbar starts */
+  
+  .navbar-list {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%; /* Adjust the width as needed */
+    height: 100%;
+    background: linear-gradient(315deg, rgba(255, 255, 255, 1) 0%, rgba(103, 81, 215, 1) 100%);
+    /* filter: blur(3px);
+    -webkit-filter: blur(8px); */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 4;
+    overflow-y: auto; /* Enable scrolling if the list is too long */
+    animation: slideIn 0.3s ease-in-out;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;;
+  
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+  }
+  
+  .navbar-list-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    opacity: 0;
+      transition: background 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .navbar-list ul {
+    list-style: none;
+    padding: 100px;
+    padding-top: 200px;
+  }
+  
+  .navbar-list a {
+    text-decoration: none;
+    color: #6751d7;
+    font-size: 35px;
+    display: block;
+    margin-bottom: 60px;
+    transition: color 0.3s ease;
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+  
+  .navbar-list a:hover, .navbar-list a:active {
+    color: #060507; /* Adjust the hover color */
+  }
+  
+  /* responsive navbar ends */
+  
+  .topNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+    background: rgba(255, 255, 255, 0.89);
+    backdrop-filter: saturate(180%) blur(10px);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .2);
+    height: 6vh;
+    position: relative;
+    z-index: 5;
+  }
+  
+  .navbar-icon {
+    display: none; /* Hide the icon by default */
+    font-size: 1.5em;
+    color: #050505;
+    cursor: pointer;
+  }
+  
+  .resLogin{
+    display: none;
+  }
+  
+  nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 70px;
+    color: white;
+  }
+  
+  nav ul li {
+    padding: 0 10px;
+  }
+  
+  .loginBtn {
+    display: flex;
+    padding: 8px 13px;
+    text-decoration: none;
+    background-color: #6751d7;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-left: 20px;
+    font-family: Helvetica;
+    font-weight: normal;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  .loginBtninside {
+    display: block;
+    width: auto;
+    padding: 8px 13px;
+    text-decoration: none;
+    background-color: #6751d7;
+    color: #fff;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    font-family: Helvetica;
+    font-weight: 200;
+    margin-left: auto; /* Align to the right */
+    margin-right: 20px; /* Set a fixed margin on the right */
+}
+  
+  a {
+    text-decoration: none;
+  }
+  
+  
+  .navbar-button {
+    display: flex;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #6751d7;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+  
+  /* Bar below the text */
+  .navbar-button::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: #6751d7;
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    border-radius: 4px 4px 0 0;
+  }
+  
+  /* Active state - Bar is visible */
+  .navbar-button:hover::after,
+  .navbar-button.active::after {
+    transform: scaleX(1);
+  }
+  
+  .navbar-button:hover {
+    transition: .4s;
+  }
+  
+  
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+  
+    .navbar-icon , .resLogin{
+      display: block; /* Show the icon in responsive view */
+    }
+  
+    .navbar-content {
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      background-color: #3498db;
+      width: 100%;
+      z-index: 1;
+      border-radius: 0 0 5px 5px;
+      display: none; /* Initially hide the content */
+      transition: transform 0.3s ease, height 0.3s ease; /* Add transition for smooth appearance */
+    }
+  
+    .navbar-content.show {
+      transform: translateY(0); /* Slide in from the top when 'show' class is added */
+      height: 100%; /* Ensure full height when shown */
+    }
+  
+    .navbar-content.responsive {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      transition: transform 0.3s ease; /* Add transition for smooth appearance */
+    }
+  
+    .navbar-content.responsive.show {
+      transform: translateY(0) scaleY(1); /* Slide in and scale vertically when 'show' class is added */
+    }
+  
+    .navbar-button.responsive {
+      display: block;
+      padding: 10px;
+      color: #fff; /* Adjust text color for better visibility */
+      text-align: right; /* Align text to the right */
+    }
+  
+    .navbar-button.responsive.active {
+      background-color: #6751d7; /* Highlight active button */
+    }
+    
+    /* Adjust font size for smaller screens */
+    .navbar-content.responsive ul li {
+      font-size: 14px;
+    }
+  
+    /* Additional styles to make sure .navbar-content overlays on navigation bar */
+    .topNav {
+      position: relative;
+    }
+  
+    nav ul {
+      position: relative;
+      z-index: 2;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .resLogin{
+      display: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-list {
+      width: 100%;
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(100%);
+    }
+  }
+  
+  /* Show and hide styles for the navbar list */
+  .navbar-list.active {
+    display: block;
+    transform: translateX(0);
+  }
+  
+  .navbar-list-overlay.active {
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    display: block;
+  }
+
+  @media (min-width: 1000px) {
+    @keyframes padding {
+        0% {padding-left: 5%;
+            padding-left: 5%;
+        }
+        100% {
+            padding-left: 4%;
+            padding-left: 4%;
+        }
+      }
+  }
+  
+  @media (max-width: 1000px) {
+    .topNav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 4%;
+      padding-right: 4%;
+      background: rgba(255, 255, 255, 0.89);
+      backdrop-filter: saturate(180%) blur(10px);
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .2);
+      height: 6vh;
+      position: relative;
+      z-index: 5;
+    }
+  
+    .navbar-button {
+      display: flex;
+      padding: 10px 8px;
+      text-decoration: none;
+      color: #6751d7;
+      position: relative;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 18px;
+      white-space: nowrap;
+    }
+    
+    /* Bar below the text */
+    .navbar-button::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background-color: #6751d7;
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+      border-radius: 4px 4px 0 0;
+    }
+    
+    /* Active state - Bar is visible */
+    .navbar-button:hover::after,
+    .navbar-button.active::after {
+      transform: scaleX(1);
+    }
+    
+    .navbar-button:hover {
+      transition: .4s;
+    }
+  
+  }
+
+  /* Adjust font size for different screen sizes */
+.navbar-button {
+font-size: 18px; /* Default font size */
+}
+
+@media (max-width: 768px) {
+.navbar-button {
+font-size: 16px; /* Adjust font size for smaller screens */
+}
+}
+
+@media (max-width: 1000px) {
+.navbar-button {
+font-size: 18px; /* Adjust font size for medium screens */
+}
+}
+
+/* Keyframes for animating padding between navlinks */
+@keyframes animatePadding {
+from {
+padding: 0 20px;
+}
+to {
+padding: 0 0px; /* Adjust the final padding value as needed */
+}
+}
+
+/* Apply animation to the navbar content */
+.navbar-content {
+animation: animatePadding 0.5s ease-in-out;
+}
+
+/* Apply animation to the responsive navbar content */
+.navbar-content.responsive {
+animation: animatePadding 0.5s ease-in-out;
+}
+
+/* Adjust padding for different screen sizes */
+@media (max-width: 768px) {
+.nav ul li {
+padding: 10px;
+}
+}
+
+@media (max-width: 1000px) {
+.nav ul li {
+padding: 10px;
+}
+}

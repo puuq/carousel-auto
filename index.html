@@ -7,11 +7,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trinity Arivals</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="chatbot-icon.css">
+    <link rel="stylesheet" href="navbar.css">
   </head>
 
   <body>
+
+    <!-- Navigator start -->
+    <nav class="topNav" id="topNav">
+      <a href="#"><h2>Logo</h2></a>
+      
+      <ul class="navbar-content">
+          <li><a href="#" class="navbar-button" onclick="toggleActive(event, this)">Home</a></li>
+          <li><a href="#service-container" class="navbar-button" onclick="toggleActive(event, this)">About Us</a></li>
+          <li><a href="#" class="navbar-button" onclick="toggleActive(event, this)">Contact Us</a></li>
+          <li><a href="#" class="navbar-button" onclick="toggleActive(event, this)">Testimonials</a></li>
+          <li><a href="#" class="loginBtn">Login/Sign Up</a></li>
+      </ul>
+
+      <div class="navbar-icon" onclick="toggleNavbarList()">
+          <i class="fas fa-bars"></i>
+      </div>
+  </nav>
+
+  <!-- Responsive Navbar List -->
+  <div class="navbar-list-overlay" onclick="closeNavbarList()"></div>
+  <div class="navbar-list" id="navbarList">
+      <ul>
+          <li><a href="#" onclick="toggleActive(event, this); closeNavbarList()">Home</a></li>
+          <li><a href="#" onclick="toggleActive(event, this); closeNavbarList()">About Us</a></li>
+          <li><a href="#" onclick="toggleActive(event, this); closeNavbarList()">Contact Us</a></li>
+          <li><a href="#" onclick="toggleActive(event, this); closeNavbarList()">Testimonials</a></li>
+          <li><a href="#" class="loginBtninside" style="color: #fff;">Login/Sign Up</a></li>
+      </ul>
+  </div>
+
+  <!-- Navigator end code -->
+
     <section id="tranding">
       <div class="container">
         <div class="swiper tranding-slider">
@@ -183,6 +217,7 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+    <script src="navbar.js"></script>
   </body>
 
 </html>
