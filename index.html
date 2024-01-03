@@ -13,14 +13,136 @@
     <link rel="stylesheet" href="navbar.css">
   </head>
 
+  <style>
+    /* Loading animation styles */
+    #loading-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+  
+    .loading-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100px;
+      animation: fadeOut 2s ease-in-out forwards, fadeIn 2.5s ease-in-out 2s forwards, fadeOutLogo 0.5s ease-in-out 4.5s forwards;
+    }
+  
+    .loading-dot {
+      margin-top: 100px;
+      width: 30px;
+      height: 20px;
+      background: #3498db;
+      border-radius: 50%;
+      animation: rotateScale 1.5s ease-in-out 1s forwards;
+    }
+  
+    #dot1 { animation-delay: 0s; }
+    #dot2 { animation-delay: 0.2s; }
+    #dot3 { animation-delay: 0.4s; }
+    #dot4 { animation-delay: 0.6s; }
+    #dot5 { animation-delay: 0.8s; }
+  
+    @keyframes rotateScale {
+      0% {
+        transform: rotate(0deg) scale(2);
+      }
+      50% {
+        transform: rotate(180deg) scale(1);
+      }
+      100% {
+        transform: rotate(360deg) scale(2);
+      }
+    }
+  
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  
+    @keyframes fadeOut {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  
+    @keyframes fadeOutLogo {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  
+    #logo-container {
+      width: 80px;
+      height: 80px;
+      overflow: hidden;
+      opacity: 0;
+      position: absolute;
+      animation: fadeInLogo 2.5s ease-in-out 2s forwards;
+    }
+  
+    #logo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      align-items: center;
+    }
+  
+    @keyframes fadeInLogo {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+  
   <body>
+
+  <!-- Loading animation container -->
+  <div id="loading-container">
+    <div class="loading-wrapper">
+      <!-- Five rotating dots -->
+      <div class="loading-dot" id="dot1"></div>
+      <div class="loading-dot" id="dot2"></div>
+      <div class="loading-dot" id="dot3"></div>
+      <div class="loading-dot" id="dot4"></div>
+      <div class="loading-dot" id="dot5"></div>
+
+      <!-- Your logo (replace 'your-logo.png' with your actual logo file) -->
+      <div id="logo-container">
+        <img src="logo.png" alt="Your Logo">
+      </div>
+    </div>
+  </div>
 
     <!-- Navigator start -->
     <nav class="topNav" id="topNav">
       <a href="#"><h2>Logo</h2></a>
       
       <ul class="navbar-content">
-          <li><a href="#" class="navbar-button" onclick="toggleActive(event, this)">Home</a></li>
+          <li><a href="#" class="navbar-button" id="homeBtn" onclick="toggleActive(event, this)">Home</a></li>
           <li><a href="#service-container" class="navbar-button" onclick="toggleActive(event, this)">About Us</a></li>
           <li><a href="#" class="navbar-button" onclick="toggleActive(event, this)">Contact Us</a></li>
           <li><a href="#" class="navbar-button" onclick="toggleActive(event, this)">Testimonials</a></li>
@@ -218,6 +340,20 @@
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
     <script src="navbar.js"></script>
+    <script>
+      // JavaScript to hide the loading animation after 5 seconds
+      document.addEventListener('DOMContentLoaded', function() {
+        // Get the loading container
+        var loadingContainer = document.getElementById('loading-container');
+  
+        // Hide the loading container after 5 seconds
+        setTimeout(function() {
+          if (loadingContainer) {
+            loadingContainer.style.display = 'none';
+          }
+        }, 5000);
+      });
+    </script>
   </body>
 
 </html>
