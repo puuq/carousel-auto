@@ -552,16 +552,21 @@ h1 {
 }
 
 #description {
-	font-size: calc(0.8rem + 0.3vmin);
+	font-size: calc(0.8rem + 0.4vmin);
 	width: 70%;
 	max-width: 40rem;
 	text-align: center;
-	margin-bottom: calc(1.4rem + 1vmin);
+	margin-bottom: calc(0.2rem + 0.1vmin);
 	color: rgb(92, 92, 92);
 	line-height: 2rem;
   min-height: 10rem;
   max-height: 16rem;
   overflow: auto;
+  font-weight: 500;
+}
+
+.star-container {
+  margin-bottom: 5px;
 }
 
 .surprise-me-btn {
@@ -654,10 +659,21 @@ h1 {
 	}
 }
 
-
 /* testimonials styling end */
 
 /* footer styling */
+.footer-logo{
+  position: relative;
+  width:120px;
+  margin: 0;
+  padding-top: 5px;
+  margin-top: 10px;
+}
+
+h4{
+  text-align: center;
+}
+
 .footer{
   display: flex;
   align-items: center;

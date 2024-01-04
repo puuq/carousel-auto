@@ -11,62 +11,63 @@ const chicken = document.querySelector(".chicken");
 let isChickenVisible;
 
 let people = [
-	{
-		photo:
-			'url("https://cdn.pixabay.com/photo/2018/03/06/22/57/portrait-3204843_960_720.jpg")',
-		name: "Susan Smith",
-		profession: "WEB DEVELOPER",
-		description:
-			"very good"
-			
-	},
+  {
+    photo: 'url("profile/Aisha Khan.jfif")',
+    name: "Aisha Khan",
+    profession: "SOFTWARE DEVELOPER",
+    description: "I recently used Trinity Removals for my relocation, and I couldn't be more satisfied with their service. The team arrived on time, and their professionalism was evident throughout the entire process.",
+    rating: 5,
+  },
+  {
+	photo:
+		"url('profile/Anand Verma.png')",
+	name: "Anand Verma",
+	profession: "LECTURER",
+	description:
+		"The movers were courteous and worked diligently. However, there were a few communication hiccups that caused some confusion about the delivery schedule.",
+		rating: 4,
+},
 
-	{
-		photo:
-			"url('https://cdn.pixabay.com/photo/2019/02/11/20/20/woman-3990680_960_720.jpg')",
-		name: "Anna Grey",
-		profession: "UFC FIGHTER",
-		description:
-			"I'm baby migas cornhole hell of etsy tofu, pickled af cardigan pabst. Man braid deep v pour-over, blue bottle art party thundercats vape. Yr waistcoat whatever yuccie, farm-to-table next level PBR&B. Banh mi pinterest palo santo, aesthetic chambray leggings activated charcoal cred hammock kitsch humblebrag typewriter neutra knausgaard. Pabst succulents lo-fi microdosing portland gastropub Banh mi pinterest palo santo"
-	},
+{
+	photo:
+		"url('profile/Jayawardena Perera.jfif')",
+	name: "Jayawardena Perera",
+	profession: "NURSE",
+	description:
+		"The team was not only professional but also incredibly friendly. They carefully wrapped and secured all my belongings, and nothing was damaged in transit. If you're looking for a stress-free move, Trinity Removals is the way to go!",
+		rating: 5,
+},
 
-	{
-		photo:
-			"url('https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg')",
-		name: "Branson Cook",
-		profession: "ACTOR",
-		description:
-			"Radio telescope something incredible is waiting to be known billions upon billions Jean-François Champollion hearts of the stars tingling of the spine. Encyclopaedia galactica not a sunrise but a galaxyrise concept of the number one encyclopaedia galactica from which we spring bits of moving fluff. Vastness is bearable only through love paroxysm of global death concept"
-	},
+{
+	photo:
+		"url('profile/Siddharth Sharma.jfif')",
+	name: "Siddharth Sharma",
+	profession: "CHEF",
+	description:
+		"Despite these challenges, the customer service team was responsive and addressed my concerns promptly. While there's room for improvement, I appreciate their efforts to make things right.",
+		rating: 4,
+},
 
-	{
-		photo:
-			"url('https://cdn.pixabay.com/photo/2014/10/30/17/32/boy-509488_960_720.jpg')",
-		name: "Julius Grohn",
-		profession: "PROFESSIONAL CHILD",
-		description:
-			"Biscuit chocolate pastry topping lollipop pie. Sugar plum brownie halvah dessert tiramisu tiramisu gummi bears icing cookie. Gummies gummi bears pie apple pie sugar plum jujubes. Oat cake croissant bear claw tootsie roll caramels. Powder ice cream caramels candy tiramisu shortbread macaroon chocolate bar. Sugar plum jelly-o chocolate dragée tart chocolate marzipan cupcake gingerbread."
-	}
+{
+	photo:
+		"url('profile/Priya Mehra.jfif')",
+	name: "Priya Mehra",
+	profession: "BANK TELLER",
+	description:
+		"I recently moved with Trinity Removals, and I am beyond impressed with the level of service they provided. From the moment they arrived to the completion of the move, everything was handled with professionalism and care. The team was efficient, friendly. ",
+		rating: 5,
+},
+
+{
+	photo:
+		"url('profile/Ahmed Malik.jfif')",
+	name: "Ahmed Malik",
+	profession: "HR MANAGER",
+	description:
+		"Movers were hardworking and polite, but a piece of furniture suffered a minor scratch during the move. On the positive side, the customer service team was responsive and addressed my concerns promptly.",
+		rating: 4,
+}
 ];
-
-// Function to create a star element
-function createStar(isFilled) {
-    const star = document.createElement('span');
-    star.className = 'star';
-    star.innerHTML = isFilled ? '&#9733;' : '&#9734;';
-    return star;
-}
-
-// Function to set the star rating based on a given number of filled stars
-function setStarRating(container, filledStars) {
-    container.innerHTML = ''; // Clear existing content
-
-    for (let i = 0; i < 5; i++) {
-        const isFilled = i < filledStars;
-        const star = createStar(isFilled);
-        container.appendChild(star);
-    }
-}
 
 imgDiv.style.backgroundImage = people[0].photo;
 personName.innerText = people[0].name;
@@ -74,91 +75,135 @@ profession.innerText = people[0].profession;
 description.innerText = people[0].description;
 let currentPerson = 0;
 
-//Select the side where you want to slide
 function slide(whichSide, personNumber) {
-	let reviewWrapWidth = reviewWrap.offsetWidth + "px";
-	let descriptionHeight = description.offsetHeight + "px";
-	//(+ or -)
-	let side1symbol = whichSide === "left" ? "" : "-";
-	let side2symbol = whichSide === "left" ? "-" : "";
+  let reviewWrapWidth = reviewWrap.offsetWidth + "px";
+  let descriptionHeight = description.offsetHeight + "px";
+  let side1symbol = whichSide === "left" ? "" : "-";
+  let side2symbol = whichSide === "left" ? "-" : "";
 
-	let tl = gsap.timeline();
+  let tl = gsap.timeline();
 
-	if (isChickenVisible) {
-		tl.to(chicken, {
-			duration: 0.4,
-			opacity: 0
-		});
-	}
+  if (isChickenVisible) {
+    tl.to(chicken, {
+      duration: 0.4,
+      opacity: 0
+    });
+  }
 
-	tl.to(reviewWrap, {
-		duration: 0.4,
-		opacity: 0,
-		translateX: `${side1symbol + reviewWrapWidth}`
-	});
+  tl.to(reviewWrap, {
+    duration: 0.4,
+    opacity: 0,
+    translateX: `${side1symbol + reviewWrapWidth}`
+  });
 
-	tl.to(reviewWrap, {
-		duration: 0,
-		translateX: `${side2symbol + reviewWrapWidth}`
-	});
+  tl.to(reviewWrap, {
+    duration: 0,
+    translateX: `${side2symbol + reviewWrapWidth}`
+  });
 
-	setTimeout(() => {
-		imgDiv.style.backgroundImage = people[personNumber].photo;
-	}, 400);
-	setTimeout(() => {
-		description.style.height = descriptionHeight;
-	}, 400);
-	setTimeout(() => {
-		personName.innerText = people[personNumber].name;
-	}, 400);
-	setTimeout(() => {
-		profession.innerText = people[personNumber].profession;
-	}, 400);
-	setTimeout(() => {
-		description.innerText = people[personNumber].description;
-	}, 400);
+  setTimeout(() => {
+    imgDiv.style.backgroundImage = people[personNumber].photo;
+    updateStarRating(); // Call the updateStarRating function here
+  }, 400);
 
-	tl.to(reviewWrap, {
-		duration: 0.4,
-		opacity: 1,
-		translateX: 0
-	});
+  setTimeout(() => {
+    description.style.height = descriptionHeight;
+  }, 400);
 
-	if (isChickenVisible) {
-		tl.to(chicken, {
-			duration: 0.4,
-			opacity: 1
-		});
-	}
+  setTimeout(() => {
+    personName.innerText = people[personNumber].name;
+  }, 400);
+
+  setTimeout(() => {
+    profession.innerText = people[personNumber].profession;
+  }, 400);
+
+  setTimeout(() => {
+    description.innerText = people[personNumber].description;
+  }, 400);
+
+  tl.to(reviewWrap, {
+    duration: 0.4,
+    opacity: 1,
+    translateX: 0
+  });
+
+  if (isChickenVisible) {
+    tl.to(chicken, {
+      duration: 0.4,
+      opacity: 1
+    });
+  }
 }
 
 function setNextCardLeft() {
-	if (currentPerson === 3) {
-		currentPerson = 0;
-		slide("left", currentPerson);
-	} else {
-		currentPerson++;
-	}
+  if (currentPerson === 5) {
+    currentPerson = 0;
+    slide("left", currentPerson);
+  } else {
+    currentPerson++;
+  }
 
-	slide("left", currentPerson);
+  slide("left", currentPerson);
 }
 
 function setNextCardRight() {
-	if (currentPerson === 0) {
-		currentPerson = 3;
-		slide("right", currentPerson);
-	} else {
-		currentPerson--;
-	}
+  if (currentPerson === 0) {
+    currentPerson = 5;
+    slide("right", currentPerson);
+  } else {
+    currentPerson--;
+  }
 
-	slide("right", currentPerson);
+  slide("right", currentPerson);
 }
 
 leftArrow.addEventListener("click", setNextCardLeft);
 rightArrow.addEventListener("click", setNextCardRight);
 
-
 window.addEventListener("resize", () => {
-	description.style.height = "100%";
+  description.style.height = "100%";
 });
 
+function updateStarRating() {
+	const starContainer = document.querySelector('.star-container');
+	starContainer.innerHTML = '';
+  
+	const rating = people[currentPerson].rating;
+	const fullStars = Math.floor(rating);
+	const hasHalfStar = rating % 1 !== 0;
+  
+	for (let i = 0; i < fullStars; i++) {
+	  const star = document.createElement('span');
+	  star.className = 'star';
+	  star.innerHTML = '★';
+	  starContainer.appendChild(star);
+	}
+  
+	if (hasHalfStar) {
+	  const halfStar = document.createElement('span');
+	  halfStar.className = 'star';
+	  halfStar.innerHTML = '★'; // You can customize the appearance of a half-star
+	  halfStar.style.width = '50%'; // Adjust the width based on your design
+	  starContainer.appendChild(halfStar);
+	}
+  
+	const emptyStars = Math.floor(5 - rating);
+	for (let i = 0; i < emptyStars; i++) {
+	  const star = document.createElement('span');
+	  star.className = 'star';
+	  star.innerHTML = '☆';
+	  starContainer.appendChild(star);
+	}
+  }
+  
+
+function initializeStarRatings() {
+  for (let i = 0; i < people.length; i++) {
+    const starContainer = document.createElement('div');
+    starContainer.className = 'star-container';
+    document.getElementById('reviewWrap').appendChild(starContainer);
+  }
+}
+
+initializeStarRatings();
