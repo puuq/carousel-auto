@@ -15,41 +15,35 @@
 
   <body >
 
-    <!-- Navigator start -->
-    <nav class="topNav" id="topNav">
-      <a href="#"><img src="logo.png" class="logo"></a>
-      
-      <ul class="navbar-content">
-          <li><a href="#" class="navbar-button" id="homeBtn" onclick="toggleActive(event, this)">Home</a></li>
-          <li><a href="#service-container" class="navbar-button" onclick="toggleActive(event, this)">About Us</a></li>
-          <li><a href="/contact.html" class="navbar-button">Contact Us</a></li>
-          <li><a href="#testimonials" class="navbar-button" onclick="toggleActive(event, this)">Testimonials</a></li>
-          <li><a href="#" class="loginBtn">Login/Sign Up</a></li>
-      </ul>
+<!-- Navigator start -->
+<nav class="topNav" id="topNav">
+  <div class="logo">
+    <a href="#"><img src="logo.png" class="logo"></a>
+  </div>  
 
-      <div class="navbar-icon" onclick="toggleNavbarList()">
-          <i class="fas fa-bars"></i>
-      </div>
+  <div class="hamburger">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+</div>
 
-  <!-- Responsive Navbar List -->
-  <div class="navbar-list-overlay" onclick="closeNavbarList()"></div>
-  <div class="navbar-list" id="navbarList">
-      <ul>
-          <li><a href="#" onclick="toggleActive(event, this); closeNavbarList()">Home</a></li>
-          <li><a href="#" onclick="toggleActive(event, this); closeNavbarList()">About Us</a></li>
-          <li><a href="#" onclick="toggleActive(event, this); closeNavbarList()">Contact Us</a></li>
-          <li><a href="#" onclick="toggleActive(event, this); closeNavbarList()">Testimonials</a></li>
-          <li><a href="#" class="loginBtninside" style="color: #fff;">Login/Sign Up</a></li>
-      </ul>
+  <div class="navbar">
+    <ul class="navbar-content">
+      <li><a href="#" class="navbar-button" id="homeBtn">Home</a></li>
+      <li><a href="#service-container" class="navbar-button" onclick="toggleActive(event, this)">About Us</a></li>
+      <li><a href="/contact.html" class="navbar-button">Contact Us</a></li>
+      <li><a href="#testimonials" class="navbar-button" onclick="toggleActive(event, this)">Testimonials</a></li>
+      <li><a href="#" class="loginBtn">Login/Sign Up</a></li>
+    </ul>
   </div>
-  </nav>
+</nav>
 
   <!-- Navigator end code -->
   <div class="landing-page">
   <section class="carousel-slider">
     <div class="arrow-wrapp" id="prevBtn">
       <!-- Left Arrow Icon -->
-      <i class="fa-solid fa-arrow-left" style="color: #6751d7;" id="prevBtn"></i>
+      <i class="fa-solid fa-arrow-left fa-xl" style="color: #6751d7;" id="prevBtn"></i>
     </div>
     
     <div id="slider">
@@ -68,7 +62,7 @@
   
     <div class="arrow-wrapp" id="nextBtn">
       <!-- Right Arrow Icon -->
-      <i class="fa-solid fa-arrow-right" style="color: #6751d7;" id="nextBtn"></i>
+      <i class="fa-solid fa-arrow-right fa-xl" style="color: #6751d7;" id="nextBtn"></i>
     </div>
   </section>
 </div>
@@ -175,7 +169,6 @@
 </div>
 
 <!-- footer end -->
-
     <script src="https://kit.fontawesome.com/982187188f.js" crossorigin="anonymous"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -184,6 +177,7 @@
     <script src="script.js"></script>
     <script src="navbar.js"></script>
     <script src="main.js"></script>
-  </body>
 
+
+  </body>
 </html>

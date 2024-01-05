@@ -23,7 +23,7 @@ const slideShow = () => {
   nextBtn.addEventListener('click', nextSlide);
   prevBtn.addEventListener('click', prevSlide);
 
-  setInterval(nextSlide, 6000); // Auto slide every 3 seconds
+  setInterval(nextSlide, 7000); // Auto slide every 3 seconds
 };
 
 slideShow();

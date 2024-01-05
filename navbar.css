@@ -5,6 +5,7 @@
   src: url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
 }
 
+
 * {
   padding: 0;
   margin: 0;
@@ -12,145 +13,101 @@
   scroll-behavior: smooth;
 }
 
-body::-webkit-scrollbar {
-  width: 0.5em;
-}
-
-body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
-}
-
 input {
   border-radius: 5px;
-  font-size: 16px; /* Adjusted font size */
+  font-size: 16px;
   padding: 5px 10px;
 }
 
-.logo{
+/* .topNav {
+  display: flex;
+
+
+
+  backdrop-filter: saturate(180%) blur(10px);
+  
+  position: relative;
+  overflow: hidden;
+  font-family: 'Open Sans Bold', sans-serif;
+} */
+
+nav{
+  width: 100vw;
+  background: rgba(255, 255, 255, 0.89);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .2);
+  display: flex;
+  position: fixed;
+    align-items: center;
+  justify-content: space-between;
+  padding-left: 4%;
+  padding-right: 4%;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
   width: 80px;
   margin: 0;
   padding-top: 5px;
 }
 
-.topNav {
-  max-height: 3.5rem; /* Adjusted max height */
-  background: linear-gradient(315deg, rgba(255, 255, 255, 1) 0%, rgba(103, 81, 215, 1) 100%);
-  background-repeat: no-repeat;
-  font-family: 'Open Sans Bold', sans-serif;
-}
+/* Responsive navbar starts */
 
-/* responsive navbar starts */
-
-.navbar-list {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(315deg, rgba(255, 255, 255, 1) 0%, rgba(103, 81, 215, 1) 100%);
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-  z-index: 4;
-  overflow: hidden;
-  overflow-y: auto;
-  animation: slideIn 0.3s ease-in-out;
-  transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
-  text-align: center;
-}
-
-.navbar-list-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-  opacity: 0;
-  transition: background 0.3s ease, opacity 0.3s ease;
-}
-
-.navbar-list ul {
-  list-style: none;
-  padding: 50px; /* Adjusted padding */
-  padding-top: 100px; /* Adjusted padding */
-}
-
-.navbar-list a {
-  text-decoration: none;
-  color: #6751d7;
-  font-size: 12px; /* Adjusted font size */
-  display: block;
-  margin-bottom: 30px; /* Adjusted margin */
-  transition: color 0.3s ease;
-  font-weight: bold;
-  padding-bottom: 5px; /* Adjusted padding */
-}
-
-.navbar-button:hover{
+.navbar-button:hover {
   color: #050505;
   transform: translate(0, -4px);
   transition: 3ms ease-out;
 }
 
-.navbar-button:active{
+.navbar-button:active {
   color: #050505;
 }
 
-/* responsive navbar ends */
+/* Responsive navbar ends */
 
-.topNav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 4%;
-  padding-right: 4%;
-  background: rgba(255, 255, 255, 0.89);
-  backdrop-filter: saturate(180%) blur(10px);
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .2);
-  height: 4vh; /* Adjusted height */
-  position: relative;
-  z-index: 5;
+.row {
+  width: 80%;
+  margin: auto;
+}
+
+
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .navbar-icon {
   display: none;
-  font-size: 1.2em; /* Adjusted font size */
+  font-size: 1.2em;
   color: #050505;
   cursor: pointer;
-}
-
-.resLogin {
-  display: none;
 }
 
 nav ul {
   display: flex;
   align-items: center;
   list-style-type: none;
-  height: 50px; /* Adjusted height */
+  height: 50px;
   color: white;
 }
 
+
 nav ul li {
-  padding: 0 8px; /* Adjusted padding */
+  padding: 0 8px;
 }
 
 .loginBtn {
   display: flex;
-  padding: 5px 10px; /* Adjusted padding */
+  padding: 5px 10px;
   text-decoration: none;
   background-color: #6751d7;
   color: #fff;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  margin-left: 10px; /* Adjusted margin */
+  margin-left: 10px;
   font-family: Helvetica;
   font-weight: normal;
   margin-left: auto;
@@ -162,7 +119,7 @@ nav ul li {
 .loginBtninside {
   display: block;
   width: auto;
-  padding: 5px 10px; /* Adjusted padding */
+  padding: 5px 10px;
   text-decoration: none;
   background-color: #6751d7;
   color: #fff;
@@ -171,10 +128,10 @@ nav ul li {
   font-family: Helvetica;
   font-weight: 200;
   margin-left: auto;
-  margin-right: 10px; /* Adjusted margin */
+  margin-right: 10px;
 }
 
-.loginBtn:hover{
+.loginBtn:hover {
   color: #050505;
   transition: transform ease 300ms;
 }
@@ -185,37 +142,21 @@ a {
 
 .navbar-button {
   display: flex;
-  padding: 8px 15px; /* Adjusted padding */
+  padding: 8px 15px;
   text-decoration: none;
   color: #6751d7;
   position: relative;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 16px; /* Adjusted font size */
+  font-size: 16px;
   white-space: nowrap;
   transition: transform ease 300ms;
 }
 
 .navbar-button.clicked {
-  color: #000; /* Set the color to black */
+  color: #000;
 }
 
-/* Bar below the text */
-/* .navbar-button::after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 4px; /* Adjusted height */
-  /* background-color: #6751d7;
-  transform: scaleX(0);
-  transition: transform 0.4s ease;
-  border-radius: 2px 2px 0 0;
-} */ 
-
-/* Active state - Bar is visible */
 .navbar-button:hover::after,
 .navbar-button.active::after {
   transform: scaleX(1);
@@ -225,89 +166,163 @@ a {
   transition: .4s;
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-  .navbar-icon, .resLogin {
-      display: block;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+}
+
+
+/*Styling Hamburger Icon*/
+.hamburger div{
+  width: 30px;
+  height:4px;
+  background: #6751d7;
+  margin: 5px;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+.hamburger{
+  display: none;
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 768px) {
+  nav {
+    position: fixed;
+    z-index: 1;
   }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+    transition: all 0.7s ease;
+  }
+
+  /* .navbar-content {
+    display: flex;
+    position: relative;
+    background: #7b8dd8;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+
+    transition: all 1s ease-out;
+    pointer-events: none;
+  } */
 
   .navbar-content {
-      position: absolute;
-      top: 50px;
-      right: 10px;
-      background-color: #3498db;
-      width: 100%;
-      z-index: 1;
-      border-radius: 0 0 5px 5px;
-      display: none;
-      transition: transform 0.3s ease, height 0.3s ease;
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0; /* Set right instead of left */
+    width: 50%;
+    height: 100%;
+    background: #6751d7;
+    flex-direction: column;
+    clip-path: ellipse(25% 50% at 100% 0%);
+    -webkit-clip-path: ellipse(45% 20% at 100% 0%);
+    transition: all 1s ease-in-out;
+    pointer-events: none;
+    opacity: 0;
   }
 
-  .navbar-content.show {
-      transform: translateY(0);
-      height: 100%;
+  .navbar-content li a{
+    left: 12rem;
+    top: 3rem;
+    font-size: larger;
   }
 
-  .navbar-content.responsive {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      transition: transform 0.3s ease;
+  .loginBtn{
+    display: block;
+    position: relative;
+    margin-left: 1rem;
+    background-color: #fff;
+    color: #6751d7;
+    width: 14.5rem;
+    font-weight: bold;
+    margin-top: 3px;
   }
 
-  .navbar-content.responsive.show {
-      transform: translateY(0) scaleY(1);
+  .loginBtn:hover{
+    transform: rotate(-2deg);
   }
 
-  .navbar-button.responsive {
-      display: block;
-      padding: 8px; /* Adjusted padding */
-      color: #fff;
-      text-align: right;
+  .navbar-content.open {
+    clip-path: ellipse(400px 300px at 100% -10%);
+    -webkit-clip-path: ellipse(300px 500px at 100% -10%);
+    pointer-events: all; /* Add this line */
+    opacity: 1;
+
   }
 
-  .navbar-button.responsive.active {
-      background-color: #6751d7;
+  .navbar-button{
+    color: #fff;
   }
 
-  /* Adjust font size for smaller screens */
-  .navbar-content.responsive ul li {
-      font-size: 10px; /* Adjusted font size */
+  .navbar-content li {
+    opacity: 0;
   }
 
-  /* Additional styles to make sure .navbar-content overlays on navigation bar */
-  .topNav {
-      position: relative;
+  .navbar-content li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
   }
 
-  nav ul {
-      position: relative;
-      z-index: 2;
+  .navbar-content li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+  }
+
+  .navbar-content li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+  }
+
+  .navbar-content li:nth-child(4) {
+    transition: all 0.5s ease 0.7s;
+  }
+
+  .navbar-content li:nth-child(5) {
+    transition: all 0.5s ease 0.8s;
+  }
+
+  .navbar-content li:nth-child(6) {
+    transition: all 0.5s ease 0.9s;
+    margin: 0;
+  }
+
+  .navbar-content li:nth-child(7) {
+    transition: all 0.5s ease 1s;
+    margin: 0;
+  }
+
+  li.fade {
+    opacity: 1;
   }
 }
 
-@media (max-width: 768px) {
-  .resLogin {
-      display: none;
+/*Animating Hamburger Icon on Click*/
+.toggle .line1{
+  transform: rotate(-45deg) translate(-5px,6px);
+  background: #fff;
+}
+.toggle .line2{
+  transition: all 0.7s ease;
+  width:0;
+  background: #fff;
+}
+.toggle .line3{
+  transform: rotate(45deg) translate(-5px,-6px);
+  background: #fff;
+}
+
+@media (min-width: 1440px) {
+  .navbar{
+    right: 0;
+    margin-right: 26rem;
   }
-}
-
-@media (max-width: 768px) {
-  .navbar-list {
-      width: 100%;
-      transition: transform 0.3s ease-in-out;
-      transform: translateX(100%);
-  }
-}
-
-/* Show and hide styles for the navbar list */
-.navbar-list.active {
-  display: block;
-  transform: translateX(0);
-}
-
-.navbar-list-overlay.active {
-  background: rgba(0, 0, 0, 0.5);
-  opacity: 1;
-  display: block;
 }
